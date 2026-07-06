@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:marginTop="@dimen/margin_4">
+                android:layout_marginTop="@dimen/margin_4">
 
                 <TextView
                     android:id="@+id/tv_show_rating"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size_12"
                 android:textColor="@color/text_secondary"
-                android:marginTop="@dimen/margin_4" />
+                android:layout_marginTop="@dimen/margin_4" />
 
         </LinearLayout>
 
