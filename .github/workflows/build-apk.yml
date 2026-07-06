@@ -45,7 +45,7 @@ jobs:
         KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: |
         cd android
-        ./gradlew assembleRelease \
+        ./gradlew assembleDebug \
           -DTMDB_API_KEY="$TMDB_API_KEY" \
           -DKEYSTORE_FILE="$KEYSTORE_FILE" \
           -DKEYSTORE_PASSWORD="$KEYSTORE_PASSWORD" \
@@ -55,14 +55,14 @@ jobs:
     - name: Find APK
       id: find_apk
       run: |
-        APK_PATH=$(find android/app/build/outputs/apk/release -name "*.apk" | head -1)
+        APK_PATH=$(find android/app/build/outputs/apk/debug -name "*.apk" | head -1)
         echo "apk_path=$APK_PATH" >> $GITHUB_OUTPUT
         echo "APK found at: $APK_PATH"
     
     - name: Create Release Package
       run: |
         mkdir -p release-package
-        cp ${{ steps.find_apk.outputs.apk_path }} release-package/MovieApp-release.apk
+        cp ${{ steps.find_apk.outputs.apk_path }} release-package/MovieApp-debug.apk
         
         # Create README with installation instructions
         cat > release-package/INSTALL.md << 'EOF'
@@ -70,25 +70,25 @@ jobs:
         
         ## Installation on Termux
         
-        1. Download the APK file: `MovieApp-release.apk`
+        1. Download the APK file: `MovieApp-debug.apk`
         
         2. Transfer to Android device:
            ```bash
            # On PC
-           adb push MovieApp-release.apk /sdcard/Download/
+           adb push MovieApp-debug.apk /sdcard/Download/
            ```
         
         3. Install via Termux:
            ```bash
            # In Termux
            pkg install android-tools
-           adb install /sdcard/Download/MovieApp-release.apk
+           adb install /sdcard/Download/MovieApp-debug.apk
            ```
         
         4. Or install directly on device:
            - Open file manager
            - Navigate to Downloads folder
-           - Tap MovieApp-release.apk
+           - Tap MovieApp-debug.apk
            - Follow installation prompts
         
         ## Configuration
@@ -131,16 +131,16 @@ jobs:
         Git Branch: ${GITHUB_REF#refs/heads/}
         Workflow Run: ${{ github.run_number }}
         
-        File: MovieApp-release.apk
-        Size: $(du -h release-package/MovieApp-release.apk | cut -f1)
-        MD5: $(md5sum release-package/MovieApp-release.apk | awk '{print $1}')
-        SHA256: $(sha256sum release-package/MovieApp-release.apk | awk '{print $1}')
+        File: MovieApp-debug.apk
+        Size: $(du -h release-package/MovieApp-debug.apk | cut -f1)
+        MD5: $(md5sum release-package/MovieApp-debug.apk | awk '{print $1}')
+        SHA256: $(sha256sum release-package/MovieApp-debug.apk | awk '{print $1}')
         EOF
     
     - name: Create ZIP Package
       run: |
         cd release-package
-        zip -r MovieApp-${{ github.run_number }}.zip MovieApp-release.apk INSTALL.md BUILD_INFO.txt
+        zip -r MovieApp-${{ github.run_number }}.zip MovieApp-debug.apk INSTALL.md BUILD_INFO.txt
         ls -lh MovieApp-*.zip
     
     - name: Upload APK to Artifacts
@@ -163,13 +163,13 @@ jobs:
           
           ## Installation Instructions
           
-          1. Download `MovieApp-release.apk` or the ZIP package
+          1. Download `MovieApp-debug.apk` or the ZIP package
           2. Follow instructions in INSTALL.md
           3. Install on Android device
           
           ### Via ADB (Recommended for Termux):
           ```bash
-          adb install -r MovieApp-release.apk
+          adb install -r MovieApp-debug.apk
           ```
           
           ### Via File Manager:
@@ -198,7 +198,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: release-package/MovieApp-release.apk
+        asset_path: release-package/MovieApp-debug.apk
         asset_name: MovieApp-release-${{ github.run_number }}.apk
         asset_content_type: application/vnd.android.package-archive
     
