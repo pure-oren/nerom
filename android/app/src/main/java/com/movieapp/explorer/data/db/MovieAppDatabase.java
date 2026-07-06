@@ -4,9 +4,11 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import com.movieapp.explorer.data.model.Movie;
 import com.movieapp.explorer.data.model.TvShow;
 
+@TypeConverters({Converters.class})
 @Database(entities = {Movie.class, TvShow.class}, version = 1, exportSchema = false)
 public abstract class MovieAppDatabase extends RoomDatabase {
     
