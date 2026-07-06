@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Explorer</string>
+    <string name="tab_movies">Movies</string>
+    <string name="tab_tv">TV Shows</string>
+    <string name="search_hint">Search movies and shows...</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="on_the_air">On The Air</string>
+    <string name="filters">Filters</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="genres">Genres</string>
+    <string name="networks">Networks</string>
+    <string name="sort_by">Sort By</string>
+    <string name="rating">Rating: %s</string>
+    <string name="votes">Votes: %s</string>
+    <string name="seasons">Seasons: %s</string>
+    <string name="episodes">Episodes: %s</string>
+    <string name="no_data">No data available</string>
+    <string name="error_loading">Error loading data</string>
+    <string name="loading">Loading...</string>
+    <string name="pin_protect">Pin Protect</string>
+    <string name="unpin">Unpin</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="set_pin">Set PIN</string>
+    <string name="pin_protected_content">This content is PIN protected</string>
+    <string name="invalid_pin">Invalid PIN</string>
+    <string name="details">Details</string>
+    <string name="back">Back</string>
+</resources>

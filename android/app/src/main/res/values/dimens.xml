@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="margin_0">0dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    
+    <!-- Text Sizes -->
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
+    
+    <!-- Image Sizes -->
+    <dimen name="poster_width">120dp</dimen>
+    <dimen name="poster_height">180dp</dimen>
+    <dimen name="backdrop_height">200dp</dimen>
+    <dimen name="thumbnail_size">48dp</dimen>
+    <dimen name="icon_size_24">24dp</dimen>
+    <dimen name="icon_size_32">32dp</dimen>
+    
+    <!-- Corner Radius -->
+    <dimen name="corner_radius_8">8dp</dimen>
+    <dimen name="corner_radius_12">12dp</dimen>
+    <dimen name="corner_radius_16">16dp</dimen>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors (Dark Theme) -->
+    <color name="primary">#1a1a2e</color>
+    <color name="primary_variant">#16213e</color>
+    <color name="primary_dark">#0f3460</color>
+    
+    <!-- Secondary Colors (Accent) -->
+    <color name="secondary">#e94560</color>
+    <color name="secondary_variant">#d63447</color>
+    
+    <!-- Background -->
+    <color name="background">#0f1419</color>
+    <color name="surface">#1a1f2e</color>
+    <color name="surface_variant">#2a3142</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#b0b0b0</color>
+    <color name="text_tertiary">#808080</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4caf50</color>
+    <color name="warning">#ff9800</color>
+    <color name="error">#f44336</color>
+    <color name="info">#2196f3</color>
+    
+    <!-- Utility Colors -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="scrim">#1a000000</color>
+</resources>
